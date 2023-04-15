@@ -1,13 +1,15 @@
-# Title
+# Frontend Starterpack
 
 *description*
 
-[deployed url](http://url-if-deployed-here)
+[deployed url](https://frontend-starterpack-illustration.onrender.com)
 
-## What Worked Well
+## Stack
 
-## What Didn't
+This starter package that will use:
 
-## Extra Credit
-
-## Screenshots
+- vite
+- sass
+- babel
+- eslint
+- node, npm
