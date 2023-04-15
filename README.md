@@ -1,6 +1,6 @@
 # Frontend Starterpack
 
-*description*
+*with a counter that scrolls that tell you how long you've been on the site...:)*
 
 [deployed url](https://frontend-starterpack-illustration.onrender.com)
 
