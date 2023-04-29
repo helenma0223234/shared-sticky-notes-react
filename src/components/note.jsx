@@ -1,18 +1,41 @@
-import React from 'react';
+/* eslint-disable no-unused-vars */
+import React, { useState } from 'react';
 
-function Note(props) {
-  console.log(props);
+function Note({
+  id, note, onDelete, onEdit,
+}) {
+  const [editingId, setEditingId] = useState(null);
+
+  const handleDelete = () => {
+    onDelete(id);
+  };
+
+  const handleEdit = () => {
+    setEditingId(id);
+    onEdit(id);
+  };
+
   return (
     <div className="notepad"
       style={{
         position: 'absolute',
-        left: props.note.x,
-        top: props.note.y,
-        zIndex: props.note.zIndex,
+        left: note.x,
+        top: note.y,
+        zIndex: note.zIndex,
       }}
     >
-      <h3>{props.note.title}</h3>
-      <p>{props.note.text}</p>
+      <div className="note-content">
+        <h3>{note.title}</h3>
+        <p>{note.text}</p>
+      </div>
+      <div className="note-footer">
+        <button type="button" onClick={handleEdit}>
+          <i className="fa-solid fa-pen-to-square" />
+        </button>
+        <button type="button" onClick={handleDelete}>
+          <i className="fa-solid fa-trash" />
+        </button>
+      </div>
     </div>
   );
 }
