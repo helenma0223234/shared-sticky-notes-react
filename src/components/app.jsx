@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { produce } from 'immer';
+// import { produce } from 'immer';   // for local storage state control/sync
 import NotesList from './notes_list';
 import InputBox from './input_box';
 import {
-  onNotesValueChange, onNoteDelete, onNoteAdd,
+  onNotesValueChange, onNoteDelete, onNoteAdd, onNoteUpdateDb, onNoteMoveDb,
 } from '../services/datastore';
 
 function App() {
@@ -54,22 +54,28 @@ function App() {
   function updateNote(edited) {
     // console.log('moved');
     console.log(edited);
-    setNotes(
-      produce((draft) => {
-        draft[edited.id] = {
-          ...draft[edited.id], title: edited.title, text: edited.content,
-        };
-      }),
-    );
-    console.log(notes[edited.id]);
+    onNoteUpdateDb(edited.id, edited.title, edited.content);
+
+    /* code for local storage */
+    // setNotes(
+    //   produce((draft) => {
+    //     draft[edited.id] = {
+    //       ...draft[edited.id], title: edited.title, text: edited.content,
+    //     };
+    //   }),
+    // );
+    // console.log(notes[edited.id]);
   }
 
   function updateNotePos(moved) {
-    setNotes(
-      produce((draft) => {
-        draft[moved.id] = { ...draft[moved.id], x: moved.updateX, y: moved.updateY };
-      }),
-    );
+    onNoteMoveDb(moved.id, moved.updateX, moved.updateY);
+
+    /* code for local storage */
+    // setNotes(
+    //   produce((draft) => {
+    //     draft[moved.id] = { ...draft[moved.id], x: moved.updateX, y: moved.updateY };
+    //   }),
+    // );
   }
 
   // Whenever a note is updated in db -> trigger the callback func

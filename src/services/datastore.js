@@ -49,3 +49,19 @@ export function onNoteAdd(newNote, newZIndex) {
 
   return database.ref(`/notes/${newNoteKey}`).set(noteData);
 }
+
+export function onNoteUpdateDb(id, title, content) {
+  const updates = {};
+  updates[`/notes/${id}/title`] = title;
+  updates[`/notes/${id}/text`] = content;
+
+  return database.ref().update(updates);
+}
+
+export function onNoteMoveDb(id, x, y) {
+  const updates = {};
+  updates[`/notes/${id}/x`] = x;
+  updates[`/notes/${id}/y`] = y;
+
+  return database.ref().update(updates);
+}

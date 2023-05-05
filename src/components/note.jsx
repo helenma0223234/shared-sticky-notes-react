@@ -13,6 +13,8 @@ function Note({
     const updateX = deltaPosition.x + note.x;
     const updateY = deltaPosition.y + note.y;
     onMove({ id, updateX, updateY });
+    console.log(deltaPosition.x);
+    console.log(deltaPosition.y);
   };
 
   const handleDrag = (e, ui) => {
@@ -21,6 +23,8 @@ function Note({
       x: x + ui.deltaX,
       y: y + ui.deltaY,
     });
+    console.log(deltaPosition.x);
+    console.log(deltaPosition.y);
   };
 
   const handleDelete = () => {
@@ -79,7 +83,7 @@ function Note({
       return (
         <Draggable
           handle=".notepad"
-          grid={[1, 1]}
+          grid={[50, 50]}
           scale={1}
           onDrag={handleDrag}
           onStop={onStop}
@@ -90,8 +94,8 @@ function Note({
           <div className="notepad draggable"
             style={{
               position: 'absolute',
-              left: note.x,
-              top: note.y,
+              left: `${note.x}px`,
+              top: `${note.y}px`,
               zIndex: note.zIndex,
             }}
           >
