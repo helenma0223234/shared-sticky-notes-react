@@ -83,7 +83,7 @@ function Note({
       return (
         <Draggable
           handle=".notepad"
-          grid={[50, 50]}
+          grid={[5, 5]}
           scale={1}
           onDrag={handleDrag}
           onStop={onStop}

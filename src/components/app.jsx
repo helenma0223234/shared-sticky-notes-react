@@ -52,8 +52,6 @@ function App() {
   }
 
   function updateNote(edited) {
-    // console.log('moved');
-    console.log(edited);
     onNoteUpdateDb(edited.id, edited.title, edited.content);
 
     /* code for local storage */
