@@ -5,7 +5,7 @@ This is a collaborative platform where multiple people can create and edit conte
 *created under instructions from COSC52 Dartmouth Lab 3*
 
 deployed:
-[https://frontend-starterpack-illustration.onrender.com](https://shared-sticky-notes.onrender.com))
+[https://frontend-starterpack-illustration.onrender.com](https://shared-sticky-notes.onrender.com)
 
 ## What worked well
 
@@ -14,6 +14,10 @@ deployed:
 - babel
 - eslint
 - node, npm
+
+### 'npm dev start'
+
+to run locally, and open your localhost, usually part 3000
 
 ## Features to add
 
