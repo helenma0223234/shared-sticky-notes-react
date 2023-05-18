@@ -5,7 +5,7 @@ This is a collaborative platform where multiple people can create and edit conte
 *created under instructions from COSC52 Dartmouth Lab 3*
 
 deployed:
-[https://frontend-starterpack-illustration.onrender.com](https://shared-sticky-notes.onrender.com)
+[URL](https://shared-sticky-notes.onrender.com)
 
 ## What worked well
 
